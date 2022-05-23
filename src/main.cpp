@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include "main.h"
 
-
 long long int sys_start = 0;
 
 void setup()
