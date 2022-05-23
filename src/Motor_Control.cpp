@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "Motor_Control.h"
+#include "main.h"
 
 void StopAllMotor()
 { // Idle the robot

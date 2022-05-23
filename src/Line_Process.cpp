@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "Line_Process.h"
+#include "main.h"
 
 void LinePIDFilter()
 { // PID control in line tracking mode
@@ -40,3 +41,4 @@ double SpeedPIDFilter(double PIDValue)
     constrain(pid_value, 0, INITIAL_SPEED);
     return pid_value;
 }
+
