@@ -15,4 +15,4 @@ static int Motor[2] = {0};
 static bool Line[5] = {false};
 
 static long long int sys_start = 0;
-static int Mode = 0; // 0 for line tracking, 1 for sonar routing
+
