@@ -1,28 +1,8 @@
-#ifndef __ARDUINO__
-#include <Arduino.h>
-#endif
-
-#define __ARDUINO__
-
-#ifndef __MOTOR_CONTROL__
-#include "Motor_Control.cpp"
-#endif
-
-#ifndef __LINE_PROCESS__
-#include "Line_Process.cpp"
-#endif
-
-#ifndef __LINE_TRACKING__
-#include "Line_Tracking.cpp"
-#endif
-
-#ifndef __PID_CONTROL__
-#include "PID_Control.cpp"
-#endif
-
-#ifndef __SENSOR_READER__
-#include "Sensor_Reader.cpp"
-#endif
+#include "Motor_Control.h"
+#include "Line_Process.h"
+#include "Line_Tracking.h"
+#include "PID_Control.h"
+#include "Sensor_Reader.h"
 
 static int Sensor_HIGH = 500; // High level for optical sensor
 static int INITIAL_SPEED = 255;
@@ -35,4 +15,4 @@ static int Motor[2] = {0};
 static bool Line[5] = {false};
 
 static long long int sys_start = 0;
-static int Mode = 0; // 0 for line tracking, 1 for sonar routing
+static int Mode = 0; //0 for line tracking, 1 for sonar routing

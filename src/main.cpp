@@ -1,11 +1,5 @@
+#include <Arduino.h>
 #include "main.h"
-
-//define class
-Line_Process lp;
-Line_Tracking lt;
-Motor_Control mc;
-PID_Control pc;
-Sensor_Reader sr;
 
 void setup()
 {
@@ -20,13 +14,13 @@ void setup()
     pinMode(Sensors[i], INPUT);
   }
   Serial.begin(9600);
-  mc.StopAllMotor();
+  StopAllMotor();
   sys_start = millis();
   Serial.println("System started");
 }
 
 void loop()
 {
-  lt.FollowLine();
+  FollowLine();
 }
 
