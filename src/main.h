@@ -9,8 +9,6 @@ static int INITIAL_SPEED = 255;
 
 static const int MotorInput[2] = {10, 9};
 static const int MotorOutput[2] = {11, 8};
-
-static const int MotorOutput[2] = {11, 8};
 static const int Sensors[5] = {A0, A1, A2, A3, A4};
 
 static int Motor[2] = {0};

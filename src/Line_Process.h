@@ -1,1 +1,2 @@
 int GetError();
+int HighSignalCount();
