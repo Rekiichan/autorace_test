@@ -12,15 +12,15 @@ void LinePIDFilter()
     double p = 0, i = 0, d = 0, pid_value;
 
     p = GetError(); // p thuc chat la error
-    i = p + prev_I;
+    i = prev_I + p;
     d = p - prev_error;
 
     pid_value = kP * p + kI * i + kD * d;
     prev_I = i;
     prev_error = p;
     pid_value *= gain / 100;
-    Motor[0] = INITIAL_SPEED + pid_value;
-    Motor[1] = INITIAL_SPEED - pid_value;
+    Motor[0] = INITIAL_SPEED + pid_value; // trai
+    Motor[1] = INITIAL_SPEED - pid_value; // phai
 }
 
 // double SpeedPIDFilter(double PIDValue)  // Slow down or spped up the robot when necessary

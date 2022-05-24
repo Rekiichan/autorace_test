@@ -10,7 +10,7 @@ void StopAllMotor()
 
 void ShiftSpeed(int *MotorSpeed)
 { // Shift the speed to the motors
-    MotorMapping(MotorSpeed);
+    MotorMapping(MotorSpeed);  //vut
     //  Serial.print(MotorSpeed[0]);
     //  Serial.print("  ");
     //  Serial.println(MotorSpeed[1]);
@@ -32,16 +32,17 @@ void ShiftSpeed(int *MotorSpeed)
 void MotorMapping(int *MotorSpeed)
 {
     int TEMP_INITIAL_SPEED = 0;
-    if (millis() - sys_start < 600)
-    {
-        TEMP_INITIAL_SPEED = (float)(INITIAL_SPEED * ((millis() - sys_start)) / 600);
-    }
-    else
-    {
+    // if (millis() - sys_start < 600)
+    // {
+    //     TEMP_INITIAL_SPEED = (float)(INITIAL_SPEED * ((millis() - sys_start)) / 600);
+    // }
+    // else
+    // {
         TEMP_INITIAL_SPEED = INITIAL_SPEED;
-    }
+    // }
     int maxx = MotorSpeed[0];
     maxx = (maxx < MotorSpeed[1]) ? MotorSpeed[1] : maxx;
+    // gan cho maxx gia tri toc do cua banh nao lon hon
     if (maxx > TEMP_INITIAL_SPEED)
     {
         double ratio = (double)TEMP_INITIAL_SPEED / maxx;
