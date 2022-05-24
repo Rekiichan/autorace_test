@@ -1,24 +1,32 @@
-#include <Arduino.h>
 #include "main.h"
-#include "Sensor_Reader.h"
+#define __SENSOR_READER__
 
-void GetSensorStatus()
-{ // Get all the sensor status
-    for (int i = 0; i < 5; i++)
-    {
-        Line[i] = ReadLine(i);
-    }
-}
+class Sensor_Reader
+{
+public:
+    //define
+    void GetSensorStatus();
+    bool ReadLine(int index);
 
-bool ReadLine(int index)
-{ // Get the sensor status for each sensor
-    int temp = analogRead(Sensors[index]);
-    if (temp >= Sensor_HIGH)
-    {
-        return true;
+    //declare
+    void GetSensorStatus()
+    { // Get all the sensor status
+        for (int i = 0; i < 5; i++)
+        {
+            Line[i] = ReadLine(i);
+        }
     }
-    else
-    {
-        return false;
+
+    bool ReadLine(int index)
+    { // Get the sensor status for each sensor
+        int temp = analogRead(Sensors[index]);
+        if (temp >= Sensor_HIGH)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-}
+};
