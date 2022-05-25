@@ -1,2 +1,0 @@
-void FollowLine();
-int GetError();

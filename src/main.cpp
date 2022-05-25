@@ -1,7 +1,6 @@
-#include <Arduino.h>
 #include "main.h"
 
-long long int sys_start = 0;
+AutoPID AP;
 
 void setup()
 {
@@ -16,12 +15,12 @@ void setup()
     pinMode(Sensors[i], INPUT);
   }
   Serial.begin(9600);
-  StopAllMotor();
+  AP.StopAllMotor();
   sys_start = millis();
   Serial.println("System started");
 }
 
 void loop()
 {
-  FollowLine();
+  AP.FollowLine();
 }
