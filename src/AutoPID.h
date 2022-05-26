@@ -4,7 +4,7 @@ class AutoPID
 {
 public:
     // variable
-    int Sensor_HIGH = 500; // High level for optical sensor
+    int Sensor_HIGH = 500;
     int INITIAL_SPEED = 255;
     long long int sys_start = 0;
 
@@ -15,7 +15,7 @@ public:
     static int Motor[2];
     static bool Line[5];
 
-    //function
+    // function
     void FollowLine();
     void GetSensorStatus();
     bool ReadLine(int index);
